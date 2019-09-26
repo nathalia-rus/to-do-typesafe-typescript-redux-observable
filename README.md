@@ -8,13 +8,47 @@ App remade from scratch following @piotrwitek documentation in order to familiar
 
 <h4> <b> components </b>  </h4>
 
-`< AddTodoForm />, < TodoList />, < TodoListActions />, < TodoListItem />, < TodoView />`
+`< AddTodoForm />, < TodoList />, < TodoListActions />, < TodoListItem />, < TodosView />`
 
 <i> <b> NB/ </b> Atomic not implemented on this project as not part of the focus. </i>
 
 <h4> <b> pages </b>  </h4>
 
-Simply `< Home />`
+Simply `< Home />` which renders the `< TodosView />`.
+
+
+<h4> <b> redux </b>  </h4>
+       
+       
+       
+    REDUX
+       
+    |--- modules
+         |---- todos
+              |------- actions.ts
+              |------- apics.ts
+              |------- reducer.ts
+              |------- selector.ts
+              |------- types.d.ts
+              
+              
+    |--- services
+        |------- index.ts
+        |------- todos-api-client.ts
+        |------- type.d.ts
+        
+        
+    |--- store
+        |------- index.ts
+        |------- root-action.ts
+        |------- root-epic.ts
+        |------- root-reducer.ts
+        |------- types.d.ts
+        |------- utils.ts
+
+
+
+lkjdjf
 
 
 
