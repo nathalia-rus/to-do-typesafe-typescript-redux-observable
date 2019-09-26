@@ -6,18 +6,18 @@ App remade from scratch following @piotrwitek documentation in order to familiar
 
 ### 1. Structure
 
-<h4> <b> components </b>  </h4>
+<h4> <b> Components </b>  </h4>
 
 `< AddTodoForm />, < TodoList />, < TodoListActions />, < TodoListItem />, < TodosView />`
 
 <i> <b> NB/ </b> Atomic not implemented on this project as not part of the focus. </i>
 
-<h4> <b> pages </b>  </h4>
+<h4> <b> Pages </b>  </h4>
 
 Simply `< Home />` which renders the `< TodosView />`.
 
 
-<h4> <b> redux </b>  </h4>
+<h4> <b> Redux </b>  </h4>
        
        
        
@@ -48,8 +48,8 @@ Simply `< Home />` which renders the `< TodosView />`.
 
 
 
-lkjdjf
 
+<h4> <b> Store </b>  </h4>
 
 
 
