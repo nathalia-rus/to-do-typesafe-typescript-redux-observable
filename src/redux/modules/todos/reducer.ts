@@ -6,8 +6,6 @@ import { combineReducers } from 'redux';
 
 import { addTodo, removeTodo, loadTodosAsync } from './actions';
 
-import cuid from 'cuid';
-
 // state of whether it is loading:
 export const isLoadingTodos = createReducer(false as boolean)
   .handleAction([loadTodosAsync.request], (state, action) => true)
