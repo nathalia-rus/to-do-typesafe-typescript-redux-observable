@@ -1,7 +1,7 @@
 // declare module here
 // so to import elsewhere as import { myModel} from "MyModels"
 
-declare module 'typesafe-actions' {
+declare module 'myModels' {
   export type Todo = {
     id: string;
     title: string;
