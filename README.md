@@ -52,7 +52,7 @@ Simply `< Home />` which renders the `< TodosView />`.
 <h4> <b> Store </b>  </h4>
 
 
-            index.js
+            index.ts
             
 Main store configuration. Assembles all actions, all reducers, all services used throughout the app, initializes the state, creates the store and handles the epicMiddleware.
 
@@ -108,10 +108,28 @@ export default store;
 
 ```
 
-kd
+
+onto the rest of the files within the store folder:
 
 
+            root-action.ts
 
+
+This is where you import * as ${feature}Actions from ../modules.todos/actions .
+
+Right so:
+
+```js
+import { routerActions } from 'react-router-redux';
+import * as todoActions from '../modules/todos/actions';
+
+export default {
+  router: routerActions,
+  todos: todoActions,
+};
+```
+
+hjbkn,l
 
 
 
