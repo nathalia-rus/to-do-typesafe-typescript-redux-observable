@@ -5,3 +5,16 @@
 // you import your models here too, the ones created in the module in types.d.ts
 
 import { Todo } from 'myModels';
+
+import cuid from 'cuid';
+
+import { createAsyncAction, createStandardAction } from 'typesafe-actions';
+
+export const addTodo = createStandardAction('ADD_TODO').map(
+  ({ title }: { title: string }): { payload: todo } => ({
+    payload: {
+      title: title,
+      id: cuid(),
+    },
+  })
+);
