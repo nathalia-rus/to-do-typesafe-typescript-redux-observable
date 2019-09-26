@@ -11,7 +11,7 @@ import cuid from 'cuid';
 import { createAsyncAction, createStandardAction } from 'typesafe-actions';
 
 export const addTodo = createStandardAction('ADD_TODO').map(
-  ({ title }: { title: string }): { payload: todo } => ({
+  ({ title }: { title: string }): { payload: Todo } => ({
     payload: {
       title: title,
       id: cuid(),
