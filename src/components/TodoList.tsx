@@ -2,8 +2,8 @@ import { RootState } from 'typesafe-actions';
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import * as selectors from '../selectors';
-import * as actions from '../actions';
+import * as selectors from '../redux/modules/todos/selector';
+import * as actions from '../redux/modules/todos/actions';
 
 import TodoListItem from './TodoListItem';
 

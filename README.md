@@ -1,1 +1,1 @@
-# Typesafe-Actions Reference Project
+# Todo App with Typesafe Redux, Redux-Obervables, Typescript

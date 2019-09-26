@@ -2,7 +2,7 @@ import { RootState } from 'typesafe-actions';
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { loadTodosAsync, saveTodosAsync } from '../actions';
+import { loadTodosAsync, saveTodosAsync } from '../redux/modules/todos/actions';
 
 const mapStateToProps = (state: RootState) => ({
   isLoading: state.todos.isLoadingTodos,
@@ -22,11 +22,11 @@ class TodoActions extends React.Component<Props, State> {
     return (
       <section>
         <button type="button" onClick={() => loadTodos()} disabled={isLoading}>
-          Load snapshot
+          Load your todos
         </button>
         &nbsp;
         <button type="button" onClick={() => saveTodos()} disabled={isLoading}>
-          Save snapshot
+          Save your todos entered
         </button>
       </section>
     );
