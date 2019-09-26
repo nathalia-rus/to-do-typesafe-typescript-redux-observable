@@ -18,3 +18,5 @@ export const addTodo = createStandardAction('ADD_TODO').map(
     },
   })
 );
+
+export const removeTodo = createStandardAction('REMOVE_TODO')<string>();
