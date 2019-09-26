@@ -115,7 +115,7 @@ onto the rest of the files within the store folder:
             root-action.ts
 
 
-This is where you import * as ${feature}Actions from ../modules.todos/actions .
+This is where you import * as ${feature}Actions from ../modules.todos/actions . If more than 1 feature, import them all and combine them there from this file altogether.
 
 Right so:
 
@@ -129,11 +129,27 @@ export default {
 };
 ```
 
-hjbkn,l
+Onto the next file, root-epic : 
 
+            root-action.ts
 
+This is where we make use of `combineEpics`from "redux-obervables". 
+Same aslast file -but this time, comibning all actions from our epics.
+Right so:
+
+```js
+import { combineEpics } from 'redux-observable';
+
+import * as todosEpics from '../modules/todos/epics';
+
+export default combineEpics(...Object.values(todosEpics));
+```
+
+Onto the file :
 
 
   
+            root-reducer.ts
 
+This is where we make use of `combineReducers`from "redux-observables". 
 
