@@ -280,7 +280,51 @@ Next: onto actions.
 
 
 
-ghjbklm
+Important bit: the use of `"typesafe-actions"` 's lib action creators' helpers.  
+
+`import { createAsyncAction, createStandardAction } from 'typesafe-actions';`
+
+so that:
+
+- create standard actions (not an async or anything fancy):
+
+```js
+
+export const addTodo = createStandardAction('ADD_TODO').map(
+  ({ title }: { title: string }): { payload: Todo } => ({
+    payload: {
+      title: title,
+      id: cuid(),
+    },
+  })
+);
+
+export const removeTodo = createStandardAction('REMOVE_TODO')<string>();
+
+```
+- create async functions -with automatic helpers that will come in other files regarding the handling of request, success, failure steps:
+
+```js
+
+export const loadTodosAsync = createAsyncAction(
+  'LOAD_TODOS_REQUEST',
+  'LOAD_TODOS_SUCCESS',
+  'LOAD_TODOS_FAILURE'
+)<undefined, Todo[], string>();
+
+// create async fn to save snapshot
+export const saveTodosAsync = createAsyncAction(
+  'SAVE_TODOS_REQUEST',
+  'SAVE_TODOS_SUCCESS',
+  'SAVE_TODOS_FAILURE'
+)<undefined, undefined, string>();
+
+
+```
+
+
+voilà!
+
 
 
 
