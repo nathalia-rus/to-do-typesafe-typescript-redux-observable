@@ -60,7 +60,7 @@ This is where `createEpicMiddleware` makes use of `RootAction`, ` RootState`, `S
 
 Right so: 
 
-`
+```js
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 // import from module created in types.d.ts gets imported
@@ -106,7 +106,10 @@ epicMiddleware.run(RootEpic);
 
 export default store;
 
-`js
+```
+
+kd
+
 
 
 
