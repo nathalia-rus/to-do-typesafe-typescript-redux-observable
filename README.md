@@ -4,4 +4,6 @@ App remade from scratch following @piotrwitek documentation in order to familiar
 
 ## Structure
 
-<b> components </b> : ATOMIC DESIGN not implemented on this project as not part of the focus 
+<b> components </b> 
+
+ATOMIC DESIGN not implemented on this project as not part of the focus 
