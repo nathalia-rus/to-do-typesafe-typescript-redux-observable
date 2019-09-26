@@ -241,11 +241,10 @@ Coding from scratch? Let's start with the order that it would make the most sens
 5. `todos-api-clients.ts from ./services`
 6. `index.ts from ./services`
 7. `epics.ts`
-8. `reducer.ts``
+8. `reducer.ts`
 
 
-
-jhgjhg
+<h5> types.d.ts </h5>
 
 
 
