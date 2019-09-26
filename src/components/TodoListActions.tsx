@@ -8,8 +8,8 @@ const mapStateToProps = (state: RootState) => ({
   isLoading: state.todos.isLoadingTodos,
 });
 const dispatchProps = {
-  loadTodosAsync: loadTodosAsync.request,
-  saveTodosAsync: saveTodosAsync.request,
+  loadTodos: loadTodosAsync.request,
+  saveTodos: saveTodosAsync.request,
 };
 
 type Props = ReturnType<typeof mapStateToProps> & typeof dispatchProps;
@@ -18,22 +18,14 @@ type State = {};
 
 class TodoActions extends React.Component<Props, State> {
   render() {
-    const { isLoading, loadTodosAsync, saveTodosAsync } = this.props;
+    const { isLoading, loadTodos, saveTodos } = this.props;
     return (
       <section>
-        <button
-          type="button"
-          onClick={() => loadTodosAsync()}
-          disabled={isLoading}
-        >
+        <button type="button" onClick={() => loadTodos()} disabled={isLoading}>
           Load snapshot
         </button>
         &nbsp;
-        <button
-          type="button"
-          onClick={() => saveTodosAsync()}
-          disabled={isLoading}
-        >
+        <button type="button" onClick={() => saveTodos()} disabled={isLoading}>
           Save snapshot
         </button>
       </section>

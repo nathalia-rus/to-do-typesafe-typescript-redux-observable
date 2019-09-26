@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { addTodo } from '../redux/modules/todos/actions';
 
 const dispatchProps = {
-  addTodo: (title: string) => addTodo({ title }),
+  addItem: (title: string) => addTodo({ title }),
 };
 
 type Props = {
-  addTodo: (title: string) => void;
+  addItem: (title: string) => void;
 };
 
 type State = {
@@ -23,7 +23,7 @@ class AddTodoForm extends React.Component<Props, State> {
   };
 
   handleAddClick = () => {
-    this.props.addTodo(this.state.title);
+    this.props.addItem(this.state.title);
     this.setState({ title: '' });
   };
 

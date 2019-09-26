@@ -10,7 +10,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
 import Home from './pages/home';
-import store from './store';
+import store from './redux/store';
 
 const styles: React.CSSProperties = {
   fontFamily: 'sans-serif',
