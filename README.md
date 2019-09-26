@@ -6,4 +6,8 @@ App remade from scratch following @piotrwitek documentation in order to familiar
 
 <b> components </b> 
 
-ATOMIC DESIGN not implemented on this project as not part of the focus 
+`< AddTodoForm />, < TodoList />, < TodoListActions />, < TodoListItem />, < TodoView />`
+
+<i> Atomic not implemented on this project as not part of the focus. </i>
+
+
