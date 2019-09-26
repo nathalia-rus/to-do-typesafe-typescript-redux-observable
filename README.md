@@ -234,14 +234,18 @@ export const composeEnhancers =
 
 Coding from scratch? Let's start with the order that it would make the most sense to start with. In my opinion: 
 
-1. types.d.ts from ./todos
-2. actions.ts from ./todos
-3. selector.ts from ./todos
-4. types.d.ts from ./services
-5. todos-api-clients.ts from ./services
-6. index.ts from ./services
-7. epics.ts
-8. reducer.ts
+1. `types.d.ts from ./todos`
+2. `actions.ts from ./todos`
+3. `selector.ts from ./todos`
+4. `types.d.ts from ./services`
+5. `todos-api-clients.ts from ./services`
+6. `index.ts from ./services`
+7. `epics.ts`
+8. `reducer.ts``
+
+
+
+jhgjhg
 
 
 
