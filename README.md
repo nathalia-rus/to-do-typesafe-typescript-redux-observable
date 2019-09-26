@@ -153,3 +153,50 @@ Onto the file :
 
 This is where we make use of `combineReducers`from "redux-observables". 
 
+```js
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
+import todosReducer from '../modules/todos/reducer';
+
+const rootReducer = combineReducers({
+  router: routerReducer,
+  todos: todosReducer,
+});
+
+export default rootReducer;
+```
+
+Now, onto the file where we get the type definitions needed regarding the store folder :
+
+
+       types.d.ts
+       
+ Namely, the types of Store, RootState, RootAction, and Types of the RootAction's interface.
+ 
+ ```js
+ 
+ import { StateType, ActionType } from 'typesafe-actions';
+
+declare module 'typesafe-actions' {
+  // store I export in store/index
+  export type Store = StateType<typeof import('./index').default>;
+  // root reducer I export in root-reducer which combines all my reducers.
+  export type RootState = StateType<typeof import('./root-reducer').default>;
+  // root action I export in root-action which unites all of my actions.
+  export type RootAction = ActionType<typeof import('./root-action').default>;
+  // types of actions' interface.
+  interface Types {
+    RootAction: RootAction;
+  }
+}
+
+ 
+ ```
+ 
+ fkkhkjhfkj
+
+
+
+
+
+
