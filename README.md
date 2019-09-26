@@ -326,9 +326,28 @@ export const saveTodosAsync = createAsyncAction(
 voilà!
 
 
+Next file: selector. Just so it becomes clear of which big chunks of data will be put in the reducer - for bigger clarity of thought ( my opinion ).
 
 
+       selector.ts
+       
+       // ./modules/todos folder 
 
+
+```js
+
+// either already created, either not:
+// but need here to import the state of the todo from the reducer.
+
+import { TodosState } from './reducer';
+
+export const getTodos = (state: TodosState) => state.todos;
+
+
+```
+
+
+ghjklpm
 
 
 
