@@ -19,7 +19,7 @@ export const isLoadingTodos = createReducer(false as boolean)
 // todos' state:
 export const todos = createReducer([
   {
-    id: cuid(),
+    id: '0',
     title: 'This is the default Todo that loads on start app',
   },
 ] as Todo[])
