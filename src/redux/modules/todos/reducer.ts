@@ -5,3 +5,10 @@ import { createReducer } from 'typesafe-actions';
 import { combineReducers } from 'redux';
 
 import { addTodo, removeTodo, loadTodosAsync, saveTodosAsync } from './actions';
+
+export const isLoadingTodos = createReducer(false as boolean)
+  .handleAction([loadTodosAsync.request], (state, action) => true)
+  .handleAction(
+    [loadTodosAsync.success, loadTodosAsync.failure],
+    (state, action) => false
+  );
