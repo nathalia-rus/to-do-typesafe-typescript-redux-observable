@@ -52,7 +52,9 @@ Simply `< Home />` which renders the `< TodosView />`.
 <h4> <b> Store </b>  </h4>
 
 
-            index.ts
+            index.ts 
+            
+            // ./store folder 
             
 Main store configuration. Assembles all actions, all reducers, all services used throughout the app, initializes the state, creates the store and handles the epicMiddleware.
 
@@ -113,6 +115,8 @@ onto the rest of the files within the store folder:
 
 
             root-action.ts
+            
+            // ./store folder 
 
 
 This is where you import * as ${feature}Actions from ../modules.todos/actions . If more than 1 feature, import them all and combine them there from this file altogether.
@@ -131,7 +135,9 @@ export default {
 
 Onto the next file, root-epic : 
 
-            root-action.ts
+            root-epic.ts
+            
+            // ./store folder 
 
 This is where we make use of `combineEpics`from "redux-obervables". 
 Same aslast file -but this time, comibning all actions from our epics.
@@ -150,6 +156,8 @@ Onto the file :
 
   
             root-reducer.ts
+            
+            // ./store folder 
 
 This is where we make use of `combineReducers`from "redux-observables". 
 
@@ -170,6 +178,8 @@ Now, onto the file where we get the type definitions needed regarding the store 
 
 
        types.d.ts
+       
+       // ./store folder 
        
  Namely, the types of Store, RootState, RootAction, and Types of the RootAction's interface.
  
@@ -193,7 +203,15 @@ declare module 'typesafe-actions' {
  
  ```
  
- fkkhkjhfkj
+ and finally, the utils file which contains the composeEnhancers (for redux devtools extension) :
+ 
+ 
+       utils.ts
+       
+       // ./store folder 
+       
+       
+fkjkjfjhdjfhg fkuh
 
 
 
