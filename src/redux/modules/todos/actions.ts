@@ -20,3 +20,9 @@ export const addTodo = createStandardAction('ADD_TODO').map(
 );
 
 export const removeTodo = createStandardAction('REMOVE_TODO')<string>();
+
+const loadTodosAsync = createAsyncAction(
+  'LOAD_TODOS_REQUEST',
+  'LOAD_TODOS_SUCCESS',
+  'LOAD_TODOS_FAILURE'
+)<undefined, Todo[], string>();
