@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import TodosView from '../features/todos/components/TodosView';
+import TodosView from '../components/TodosView';
 
 export default () => (
   <main>

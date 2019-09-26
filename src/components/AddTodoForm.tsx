@@ -3,17 +3,17 @@ import { connect } from 'react-redux';
 
 import { addTodo } from '../actions';
 
-const dispatchProps = {
-  addItem: (title: string) => addTodo({ title }),
-};
+// const dispatchProps = {
+//   addItem: (title: string) => addTodo({ title }),
+// };
 
-type Props = {
-  addItem: (title: string) => void;
-};
+// type Props = {
+//   addItem: (title: string) => void;
+// };
 
-type State = {
-  title: string;
-};
+// type State = {
+//   title: string;
+// };
 
 class AddTodoForm extends React.Component<Props, State> {
   readonly state = { title: '' };
