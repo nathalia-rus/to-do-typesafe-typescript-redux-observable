@@ -347,9 +347,104 @@ export const getTodos = (state: TodosState) => state.todos;
 ```
 
 
-ghjklpm
+Ok, now let's go to services folder, and then come back to the actions' one.
 
 
+       types.d.ts
+       
+       // ./modules/services folder 
+       
+
+There, you export the type Services -which remember is used in the `store/index`file (main store). Right so:
+
+```js
+import {} from 'typesafe-actions';
+
+declare module 'typesafe-actions' {
+  export type Services = typeof import('./index').default;
+}
+
+
+```
+ 
+ even if nothing is in ./index just yet.
+ 
+ That's why it could also equally have been created while we were setting up the store folder. 
+ 
+ Then, onto the actual functions :
+ 
+       todos-api-client.ts
+       
+       // ./modules/services folder 
+       
+This is where we import the `Todo` model, as we will retrieve the array of todos and initialize if need be -our case.
+
+Right so (specific to our app basic initial setup for demo purposes):
+
+```js
+
+import { Todo } from 'myModels';
+
+let todos: Todo[] = [
+  {
+    id: '0',
+    title: 'This is the first to do coming from api client.',
+  },
+];
+
+
+```
+ 
+ and we add the services api actions -here, simply getting our initial hardcoded data which we fake takes time to load with 500 time out: 
+ 
+ ```js
+ 
+ export function loadSnapshot(): Promise<Todo[]> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(todos);
+    }, 500);
+  });
+}
+
+ 
+ ````
+ 
+ 
+ We are now ready to export it all from the index. 
+ 
+        index.ts
+       
+       // ./modules/services folder 
+ 
+ 
+ 
+ Right so:
+ 
+ NB - you can categorize the different types of services so it doesn't get messy overtime and all is clear. So you have this object: 
+ 
+ ```js
+ 
+ import * as todos from './todos-api-client';
+
+export default {
+  api: {
+    todos,
+  },
+};
+
+ 
+ ```
+ 
+ So that in `epics.ts`, you can access `'./todos-api-client'` functions neatly through `api.todos.nameOfFunction()`
+
+Which is the next file:
+
+        epics.ts
+       
+       // ./modules/todos folder 
+     
+fffff
 
 
 
