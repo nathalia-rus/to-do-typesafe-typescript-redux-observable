@@ -244,11 +244,43 @@ Coding from scratch? Let's start with the order that it would make the most sens
 8. `reducer.ts`
 
 
-<h5> types.d.ts </h5>
+       types.d.ts
+       
+       // ./modules/todos folder 
+       
+
+This is where the types of the folder's features are defined. In our case, it is a to do app - so it's simply the Todo.
+
+! important. Again, in types.d.ts, like in any other files of that nature, we declare a module. Imported outside as ".." from "nameofmodule".
+
+Right so: 
+
+```js
+// declare module here
+// so to import elsewhere as import { myModel} from "MyModels"
+
+declare module 'myModels' {
+  export type Todo = {
+    id: string;
+    title: string;
+  };
+}
+
+```
+
+
+Model which will be used a lot, amongst other, in the ` actions`, `./modules/services` folder's files.
+
+Next: onto actions.
+
+
+       actions.ts
+       
+       // ./modules/todos folder 
 
 
 
-
+ghjbklm
 
 
 
