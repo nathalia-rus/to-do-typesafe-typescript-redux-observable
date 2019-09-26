@@ -51,6 +51,12 @@ Simply `< Home />` which renders the `< TodosView />`.
 
 <h4> <b> Store </b>  </h4>
 
+In my opinion, it is better to start with creating all of the folder's files (in .js extension initially so it doesn't throw an error). 
+Start coding even if the imports (ex: actions) are not created yet. 
+So the structure is there, as the Types declared flow down and are used in the final ./store/index main reducer. Crucially: `RootAction`, `RootState`, `RootEpic`, `services`. Plan in advance the architecture of this - so that it becomes such a bliss as you get going a all is planned and the order in which you're doing things become intuitive and efficient.
+
+Note: Services (with uppercase S) from the modules/services can be created then too. Your choice. 
+
 
             index.ts 
             
@@ -181,7 +187,7 @@ Now, onto the file where we get the type definitions needed regarding the store 
        
        // ./store folder 
        
- Namely, the types of Store, RootState, RootAction, and Types of the RootAction's interface.
+Namely, the types of Store, RootState, RootAction, and Types of the RootAction's interface.
  
  ```js
  
@@ -211,7 +217,40 @@ declare module 'typesafe-actions' {
        // ./store folder 
        
        
-fkjkjfjhdjfhg fkuh
+which is basically:
+
+```js
+import { compose } from 'redux';
+
+export const composeEnhancers =
+  (process.env.NODE_ENV === 'development' &&
+    window &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
+  ```
+  
+
+<h4> <b> modules/todos + modules/services </b>  </h4>
+
+Coding from scratch? Let's start with the order that it would make the most sense to start with. In my opinion: 
+
+1. types.d.ts from ./todos
+2. actions.ts from ./todos
+3. selector.ts from ./todos
+4. types.d.ts from ./services
+5. todos-api-clients.ts from ./services
+6. index.ts from ./services
+7. epics.ts
+8. reducer.ts
+
+
+
+
+
+
+
+
+
 
 
 
