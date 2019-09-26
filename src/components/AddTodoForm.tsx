@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { addTodo } from '../actions';
+import { addTodo } from '../redux/modules/todos/actions';
 
-// const dispatchProps = {
-//   addItem: (title: string) => addTodo({ title }),
-// };
+const dispatchProps = {
+  addTodo: (title: string) => addTodo({ title }),
+};
 
-// type Props = {
-//   addItem: (title: string) => void;
-// };
+type Props = {
+  addTodo: (title: string) => void;
+};
 
-// type State = {
-//   title: string;
-// };
+type State = {
+  title: string;
+};
 
 class AddTodoForm extends React.Component<Props, State> {
   readonly state = { title: '' };
@@ -23,7 +23,7 @@ class AddTodoForm extends React.Component<Props, State> {
   };
 
   handleAddClick = () => {
-    this.props.addItem(this.state.title);
+    this.props.addTodo(this.state.title);
     this.setState({ title: '' });
   };
 
