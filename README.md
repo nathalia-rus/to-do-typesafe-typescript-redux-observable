@@ -4,14 +4,21 @@ App remade from scratch following @piotrwitek documentation in order to familiar
 
 ## INDEX
 
-### Structure
+### 1. Structure
 
-<b> components </b> 
+<h4> <b> components </b>  </h4>
 
 `< AddTodoForm />, < TodoList />, < TodoListActions />, < TodoListItem />, < TodoView />`
 
 <i> <b> NB/ </b> Atomic not implemented on this project as not part of the focus. </i>
 
-<b> components </b> 
+<h4> <b> pages </b>  </h4>
+
+Simply `< Home />`
+
+
+
+
+  
 
 
