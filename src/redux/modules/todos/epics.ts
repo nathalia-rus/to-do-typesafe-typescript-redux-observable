@@ -14,7 +14,7 @@ export const loadTodosEpic: Epic<
   RootAction,
   RootState,
   Services
-> = (action$, state$, { api }) => {
+> = (action$, state$, { api }) =>
   action$.pipe(
     filter(isActionOf(loadTodosAsync.request)),
     switchMap(() =>
@@ -24,14 +24,13 @@ export const loadTodosEpic: Epic<
       )
     )
   );
-};
 
 export const saveTodosEpic: Epic<
   RootAction,
   RootAction,
   RootState,
   Services
-> = (action$, state$, { api }) => {
+> = (action$, state$, { api }) =>
   action$.pipe(
     filter(isActionOf(saveTodosAsync.request)),
     switchMap(() =>
@@ -41,4 +40,3 @@ export const saveTodosEpic: Epic<
       )
     )
   );
-};
