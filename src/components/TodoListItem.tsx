@@ -13,7 +13,7 @@ function TodoListItem({ title, onRemoveClick }: Props) {
         style={{ color: 'darkred', float: 'right', cursor: 'pointer' }}
         onClick={onRemoveClick}
       >
-        X
+        remove
       </div>
     </div>
   );

@@ -22,11 +22,11 @@ class TodoActions extends React.Component<Props, State> {
     return (
       <section>
         <button type="button" onClick={() => loadTodos()} disabled={isLoading}>
-          Load snapshot
+          Load your todos
         </button>
         &nbsp;
         <button type="button" onClick={() => saveTodos()} disabled={isLoading}>
-          Save snapshot
+          Save your todos entered
         </button>
       </section>
     );
