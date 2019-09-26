@@ -8,6 +8,6 @@ App remade from scratch following @piotrwitek documentation in order to familiar
 
 `< AddTodoForm />, < TodoList />, < TodoListActions />, < TodoListItem />, < TodoView />`
 
-<i> Atomic not implemented on this project as not part of the focus. </i>
+<i> <b> NB/ </b> Atomic not implemented on this project as not part of the focus. </i>
 
 
