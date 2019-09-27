@@ -482,7 +482,9 @@ export const loadTodosEpic: Epic<
 
 ```
 
-ghjklm
+Now onto the last file of the modules folder -and the rest that had been set up will allow us, with that done, to implement the connection from the component.
+
+
 
 
 
