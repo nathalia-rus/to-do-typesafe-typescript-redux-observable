@@ -485,10 +485,64 @@ export const loadTodosEpic: Epic<
 Now onto the last file of the modules folder -and the rest that had been set up will allow us, with that done, to implement the connection from the component.
 
 
+        reducer.ts
+       
+       // ./modules/todos folder 
 
 
 
+This is where we import and make use of the models declared in myModels module, as well as the new way to handle actions from typesafe-actions. 
 
+```js
+import { Todo } from 'myModels';
+import { createReducer } from 'typesafe-actions';
+import { combineReducers } from 'redux';
+````
+
+We import the actions from `./actions` file.
+
+And each mini reducer is like a function that handles an aspect of the store (within that store feature).
+
+
+```js
+// state of whether it is loading:
+export const isLoadingTodos = createReducer(false as boolean)
+  .handleAction([loadTodosAsync.request], (state, action) => true)
+  .handleAction(
+    [loadTodosAsync.success, loadTodosAsync.failure],
+    (state, action) => false
+  );
+
+// todos' state:
+export const todos = createReducer([
+  {
+    id: '0',
+    title: 'This is the default Todo that loads on start app',
+  },
+] as Todo[])
+  .handleAction(addTodo, (state, action) => [...state, action.payload])
+  .handleAction(removeTodo, (state, action) =>
+    state.filter(i => i.id !== action.payload)
+  );
+```
+
+To be combined and exported -cd its use in root-reducer's combination of the different possible reducer files from the different features' folder:
+
+
+```js
+const todosReducer = combineReducers({ isLoadingTodos, todos });
+
+export default todosReducer;
+
+```
+
+And we export the State type of the Todos feature `TodosState` which naturally is of:
+
+```js
+export type TodosState = ReturnType<typeof todosReducer>;
+```
+
+ghjkl
 
 
 
