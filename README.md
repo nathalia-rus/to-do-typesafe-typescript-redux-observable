@@ -444,7 +444,47 @@ Which is the next file:
        
        // ./modules/todos folder 
      
-fffff
+This is where most of RxJS "magic" is used, along with redux-observable. 
+
+```js
+
+export const loadTodosEpic: Epic<
+  RootAction,
+  RootAction,
+  RootState,
+  Services
+> = (action$, state$, { api }) =>
+
+```
+
+Type returned is Epic (observable), which is constituted of RootAction (the actions), the RootState and Services, and takes the action passed as an argument along side the state and any services dependencies -in our case, api. 
+
+So that :
+
+
+```js
+
+export const loadTodosEpic: Epic<
+  RootAction,
+  RootAction,
+  RootState,
+  Services
+> = (action$, state$, { api }) =>
+  action$.pipe(
+    filter(isActionOf(loadTodosAsync.request)),
+    switchMap(() =>
+      from(api.todos.loadSnapshot()).pipe(
+        map(loadTodosAsync.success),
+        catchError((message: string) => of(loadTodosAsync.failure(message)))
+      )
+    )
+  );
+
+```
+
+ghjklm
+
+
 
 
 
