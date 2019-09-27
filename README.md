@@ -542,7 +542,9 @@ And we export the State type of the Todos feature `TodosState` which naturally i
 export type TodosState = ReturnType<typeof todosReducer>;
 ```
 
-ghjkl
+Voilà !
+
+
 
 
 
